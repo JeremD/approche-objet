@@ -21,4 +21,8 @@ public class AdressePostale {
 		this.city = city;
 	}
 
+	public void printAdresse() {
+		System.out.println(this.rue + " " + this.libele + " " + this.postalcode + " " + this.city);
+	}
+
 }

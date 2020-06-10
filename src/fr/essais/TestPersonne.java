@@ -3,6 +3,7 @@
  */
 package fr.essais;
 
+import fr.entites.AdressePostale;
 import fr.entites.Personne;
 
 /**
@@ -22,13 +23,19 @@ public class TestPersonne {
 		Personne chef = new Personne();
 		chef.lastname = "DUFFOURD";
 		chef.firstname = "Jean";
-		
+
 		/*
 		 * Sous-chef
 		 */
-		Personne sousChef = new Personne("Pascal", "FREYLA", "16 Rue de la framboïse 22000 Saint-Brieuc");
+		AdressePostale sousChefAdresse = new AdressePostale(16, "rue de la framboïse", 22000, "Saint-Brieuc");
 
-		System.out.println(sousChef.adress);
+		Personne sousChefNom = new Personne("Pascal", "FREYLA");
+
+		sousChefNom.setName("rizou", "Philippe");
+
+		System.out.println(sousChefNom.getLasttName());
+
+		sousChefAdresse.printAdresse();
 
 	}
 
