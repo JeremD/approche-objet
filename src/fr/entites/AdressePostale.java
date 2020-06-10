@@ -1,6 +1,3 @@
-/**
- * 
- */
 package fr.entites;
 
 /**
@@ -10,11 +7,11 @@ package fr.entites;
 public class AdressePostale {
 
 	/**
-	 * @param args
+	 * Classe AdressePostale
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+	public int numeroRue;
+	public String libeleVoie;
+	public int codePostal;
+	public String ville;
 
 }
