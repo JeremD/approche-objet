@@ -20,20 +20,16 @@ public class TestPersonne {
 		 * Chef
 		 */
 		Personne chef = new Personne();
-		chef.nomPersonne = "Jean";
-		chef.prenomPersonne = "DUFFOURD";
-		chef.adressePostale = "5 Avenue des Platanes 78000 Versailles";
-
+		chef.lastname = "DUFFOURD";
+		chef.firstname = "Jean";
+		
 		/*
 		 * Sous-chef
 		 */
-		Personne sousChef = new Personne();
-		sousChef.nomPersonne = "Pascal";
-		sousChef.prenomPersonne = "FREYLA";
-		sousChef.adressePostale = "16 Rue de la framboïse Saint-Brieuc";
+		Personne sousChef = new Personne("Pascal", "FREYLA", "16 Rue de la framboÃ¯se 22000 Saint-Brieuc");
 
-		System.out.println(sousChef.adressePostale);
-		
+		System.out.println(sousChef.adress);
+
 	}
 
 }
