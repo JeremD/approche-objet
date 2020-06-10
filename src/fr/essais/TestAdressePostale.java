@@ -12,27 +12,19 @@ public class TestAdressePostale {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
+
 		/*
 		 * Premiere adresse
 		 */
-		AdressePostale firstAdresse = new AdressePostale();
-		
-		firstAdresse.numeroRue = 6;
-		firstAdresse.libeleVoie = "Rue du chateau";
-		firstAdresse.codePostal = 44100;
-		firstAdresse.ville = "Nantes";
-		
+		AdressePostale firstAdresse = new AdressePostale(6, "Rue du château", 44100, "Nantes");
+
+		System.out.println(firstAdresse.city);
+
 		/*
-		 * Deuxi�me adresse
+		 * Deuxième adresse
 		 */
-		AdressePostale secondAdresse = new AdressePostale();
-		
-		secondAdresse.numeroRue = 23;
-		secondAdresse.libeleVoie = "Avenue des Platanes";
-		secondAdresse.codePostal = 78000;
-		secondAdresse.ville = "Versailles";
-		
+		AdressePostale secondAdresse = new AdressePostale(23, "Avenue des Platanes", 78000, "Versailles");
+
 	}
 
 }

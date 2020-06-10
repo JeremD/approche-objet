@@ -8,7 +8,7 @@ package fr.entites;
  *
  */
 public class Personne {
-	
+
 	/**
 	 * Classe Personne
 	 */
