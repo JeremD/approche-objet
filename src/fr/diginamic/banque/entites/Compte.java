@@ -13,19 +13,15 @@ public class Compte {
 	private double soldeAccount;
 
 	/**
-	 * @param numberAccount
-	 * @param soldeAccount
 	 */
-	public Compte(String numberAccount, double soldeAccount) {
-		this.numberAccount = numberAccount;
-		this.soldeAccount = soldeAccount;
+	public Compte() {
 	}
 
 	public String getNumberAccount() {
 		return numberAccount;
 	}
 
-	private void setNumberAccount(String numberAccount) {
+	public void setNumberAccount(String numberAccount) {
 		this.numberAccount = numberAccount;
 	}
 

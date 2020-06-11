@@ -3,11 +3,8 @@
  */
 package fr.diginamic.banque.entites;
 
-import Compte;
-
 /**
- * @author Jeremy
- *
+ * * @author Jeremy CompteTaux hérite de Compte
  */
 public class CompteTaux extends Compte {
 
@@ -16,10 +13,16 @@ public class CompteTaux extends Compte {
 	/*
 	 * Constructeur Ajout de tauxRemuneration
 	 */
-	public CompteTaux(String numberAccount, double soldeAccount, double tauxRemuneration) {
-		super(numberAccount, soldeAccount);
-		this.tauxRemuneration = tauxRemuneration;
+	public CompteTaux() {
+		super();
+	}
 
+	public double getTauxRemuneration() {
+		return tauxRemuneration;
+	}
+
+	public void setTauxRemuneration(double tauxRemuneration) {
+		this.tauxRemuneration = tauxRemuneration;
 	}
 
 	/*
