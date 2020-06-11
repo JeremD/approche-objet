@@ -9,33 +9,40 @@ package fr.diginamic.banque.entites;
  */
 public class Compte {
 
-	int numberAccount;
-	int soldeAccount;
-	
+	private String numberAccount;
+	private double soldeAccount;
+
 	/**
 	 * @param numberAccount
 	 * @param soldeAccount
 	 */
-	public Compte(int numberAccount, int soldeAccount) {
+	public Compte(String numberAccount, double soldeAccount) {
 		this.numberAccount = numberAccount;
 		this.soldeAccount = soldeAccount;
 	}
 
-	public int getNumberAccount() {
+	public String getNumberAccount() {
 		return numberAccount;
 	}
 
-	public void setNumberAccount(int numberAccount) {
+	private void setNumberAccount(String numberAccount) {
 		this.numberAccount = numberAccount;
 	}
 
-	public int getSoldeAccount() {
+	public double getSoldeAccount() {
 		return soldeAccount;
 	}
 
-	public void setSoldeAccount(int soldeAccount) {
+	public void setSoldeAccount(double soldeAccount) {
 		this.soldeAccount = soldeAccount;
 	}
-	
-	
+
+	/**
+	 * On appel la méthode toString() qui affiche l'objet Compte
+	 */
+	@Override
+	public String toString() {
+		return "Informations du compte : " + numberAccount + "\nSoldes actuel : " + soldeAccount + " €";
+	}
+
 }
