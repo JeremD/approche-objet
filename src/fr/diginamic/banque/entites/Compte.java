@@ -9,6 +9,7 @@ package fr.diginamic.banque.entites;
  */
 public class Compte {
 
+	// Variable instance privée
 	private String numberAccount;
 	private double soldeAccount;
 

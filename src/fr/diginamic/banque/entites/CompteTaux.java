@@ -8,7 +8,7 @@ package fr.diginamic.banque.entites;
  */
 public class CompteTaux extends Compte {
 
-	double tauxRemuneration;
+	private double tauxRemuneration;
 
 	/*
 	 * Constructeur Ajout de tauxRemuneration
