@@ -38,7 +38,7 @@ public class TestBanque {
 		myAccountTaux.setTauxRemuneration(80);
 
 		// Tableau de compte
-		Compte mesComptes[] = new Compte[2];
+		Compte[] mesComptes = new Compte[2];
 		mesComptes[0] = myAccount;
 		mesComptes[1] = myAccountTaux;
 
