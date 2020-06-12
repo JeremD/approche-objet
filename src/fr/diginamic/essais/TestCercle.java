@@ -1,5 +1,6 @@
-package fr.diginamic.entites;
+package fr.diginamic.essais;
 
+import fr.diginamic.entites.Cercle;
 import fr.diginamic.utils.CercleFactory;
 
 /**
