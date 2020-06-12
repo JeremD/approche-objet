@@ -23,7 +23,7 @@ public class TestCercle {
 		System.out.println("Surface du cercle bleu : " + blueCercle.surfaceCercle() + "\r");
 
 		// Cercle rouge : version factory
-		Cercle redCercle = CercleFactory.generateCercle(8.62);
+		Cercle redCercle = CercleFactory.cercle(8.62);
 		System.out.println("Périmètre du cercle rouge : " + redCercle.perimetreCercle());
 		System.out.println("Surface du cercle rouge : " + redCercle.surfaceCercle() + "\r");
 	}

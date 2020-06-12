@@ -10,11 +10,11 @@ import fr.diginamic.entites.Cercle;
 public class CercleFactory {
 	
 	/**
-	 * Création d'un cercle
+	 * Création de cercle
 	 * @param rayon
 	 * @return Cercle
 	 */
-	public static Cercle generateCercle (double rayon) {
+	public static Cercle cercle (double rayon) {
 		return new Cercle(rayon);
 	}
 	
