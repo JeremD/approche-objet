@@ -1,9 +1,9 @@
-package fr.diginamic.banque.essais;
+package fr.diginamic.entites;
 
-import fr.diginamic.banque.entites.Cercle;
+import fr.diginamic.utils.CercleFactory;
 
 /**
- * Exercice Cercle
+ * Exercice Cercle & Cercle Factory
  * 
  * @author Jeremy
  *
@@ -17,13 +17,13 @@ public class TestCercle {
 	 */
 	public static void main(String[] args) {
 
-		// Premier cercle
+		// Cercle bleu : version classique
 		Cercle blueCercle = new Cercle(5);
-		System.out.println("Périmètre du bleu : " + blueCercle.perimetreCercle());
+		System.out.println("Périmètre du cercle bleu : " + blueCercle.perimetreCercle());
 		System.out.println("Surface du cercle bleu : " + blueCercle.surfaceCercle() + "\r");
 
-		// Deuxième cercle
-		Cercle redCercle = new Cercle(8.62);
+		// Cercle rouge : version factory
+		Cercle redCercle = CercleFactory.generateCercle(8.62);
 		System.out.println("Périmètre du cercle rouge : " + redCercle.perimetreCercle());
 		System.out.println("Surface du cercle rouge : " + redCercle.surfaceCercle() + "\r");
 	}
