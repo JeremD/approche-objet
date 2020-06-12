@@ -3,6 +3,8 @@ package fr.diginamic.essais;
 import fr.diginamic.operations.CalculMoyenne;
 
 /**
+ * Exercice Calcul Moyenne
+ * 
  * @author Jeremy
  *
  */
