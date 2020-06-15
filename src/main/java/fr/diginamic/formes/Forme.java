@@ -7,15 +7,18 @@ package fr.diginamic.formes;
  *
  */
 public abstract class Forme {
-	
-	public Forme( ) {
-		
-	}
-	
-	public double calculerSurface() {
-		return 0;
-	}
-	public double calculerPerimetre() {
-		return 0;
-	}
+
+	/**
+	 * Calcule de surface
+	 * 
+	 * @return double
+	 */
+	public abstract double calculerSurface();
+
+	/**
+	 * Calcule de périmètre
+	 * 
+	 * @return double
+	 */
+	public abstract double calculerPerimetre();
 }
