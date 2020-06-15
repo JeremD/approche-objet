@@ -4,7 +4,10 @@ import fr.diginamic.entites.Cercle;
 import fr.diginamic.utils.CercleFactory;
 
 /**
- * Exercice Cercle & Cercle Factory
+ * 
+ * Exercices en auto-formation
+ * 
+ * EXERCICE Cercle Factory
  * 
  * @author Jeremy
  *
