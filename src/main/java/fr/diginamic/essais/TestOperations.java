@@ -3,7 +3,10 @@ package fr.diginamic.essais;
 import fr.diginamic.operations.Operations;
 
 /**
- * Exercice Operations
+ * 
+ * Exercices en auto-formation
+ * 
+ * EXERCICE Opérations
  * 
  * @author Jeremy
  *
