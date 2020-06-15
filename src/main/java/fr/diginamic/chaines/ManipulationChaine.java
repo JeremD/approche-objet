@@ -1,7 +1,12 @@
 package fr.diginamic.chaines;
 
+import java.util.Arrays;
+
 /**
- * Exercice Manipulation Chaine
+ * 
+ * Exercices en auto-formation
+ * 
+ * EXERCICE Manipulation Chaine
  * 
  * @author Jeremy
  *
@@ -17,7 +22,7 @@ public class ManipulationChaine {
 
 		String chaine = "Durand;Marcel;012543;1 523.5";
 
-		System.out.println("String --> " + chaine + "\r");
+		System.out.println("Chaîne de caractère --> " + chaine + "\r");
 
 		// Premier charactère
 		int chainePremierChar = chaine.charAt(0);
@@ -33,12 +38,12 @@ public class ManipulationChaine {
 
 		// Extraction nom de famille et affichage en majuscule / minuscule
 		String chaineNom = chaine.substring(0, chaineIndex);
-		System.out.println("Nom de famille : " + chaineNom.toUpperCase());
+		System.out.println("Nom de famille en majuscule : " + chaineNom.toUpperCase());
 		System.out.println("Nom de famille en minuscule : " + chaineNom.toLowerCase());
-		
-		// Découpage tableau
+
+		// Découpage de la chaine
 		String[] chaineSplit = chaine.split(";");
-		System.out.println("Découpage du tableau : " + chaineSplit);
+		System.out.println("Découpage de la chaîne : " + Arrays.toString(chaineSplit));
 
 	}
 
