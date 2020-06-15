@@ -3,7 +3,11 @@ package fr.diginamic.utils;
 import fr.diginamic.entites.Cercle;
 
 /**
- * Exercice Cercle Factory
+ * 
+ * Exercices en auto-formation
+ * 
+ * EXERCICE Cercle Factory
+ * 
  * @author Jeremy
  *
  */
