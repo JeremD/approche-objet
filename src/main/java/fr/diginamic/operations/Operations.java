@@ -1,7 +1,10 @@
 package fr.diginamic.operations;
 
 /**
- * Exercice Operations
+ * 
+ * Exercices en auto-formation
+ * 
+ * EXERCICE Opérations
  * 
  * @author Jeremy
  *
