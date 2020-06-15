@@ -43,7 +43,7 @@ public class ManipulationChaine {
 
 		// Découpage de la chaine
 		String[] chaineSplit = chaine.split(";");
-		System.out.println("Découpage de la chaîne : " + Arrays.toString(chaineSplit));
+		System.out.println("Découpage de la chaîne : " + Arrays.toString(chaineSplit) + "\r");
 
 	}
 
