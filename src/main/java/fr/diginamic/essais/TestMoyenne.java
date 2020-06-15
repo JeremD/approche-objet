@@ -3,7 +3,10 @@ package fr.diginamic.essais;
 import fr.diginamic.operations.CalculMoyenne;
 
 /**
- * Exercice Calcul Moyenne
+ * 
+ * Exercices en auto-formation
+ * 
+ * EXERCICE Calcul Moyenne
  * 
  * @author Jeremy
  *

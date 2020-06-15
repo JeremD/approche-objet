@@ -1,10 +1,10 @@
-/**
- * 
- */
 package fr.diginamic.operations;
 
 /**
- * Exercice Calcul Moyenne
+ * 
+ * Exercices en auto-formation
+ * 
+ * EXERCICE Calcul Moyenne
  * 
  * @author Jeremy
  *
