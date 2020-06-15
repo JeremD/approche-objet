@@ -1,7 +1,10 @@
 package fr.diginamic.entites;
 
 /**
- * Exercice Cercle
+ * 
+ * Exercices en auto-formation
+ * 
+ * EXERCICE Cercle
  * 
  * @author Jeremy
  *
