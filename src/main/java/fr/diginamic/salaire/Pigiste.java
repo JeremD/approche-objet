@@ -1,7 +1,7 @@
 package fr.diginamic.salaire;
 
 /**
- *  Exercie Calcul Salaire
+ * Exercie Calcul Salaire
  * 
  * @author Jeremy
  *
@@ -17,10 +17,10 @@ public class Pigiste extends Intervenant {
 	/**
 	 * Constructor
 	 * 
-	 * @param nom              Nom pigiste
-	 * @param prenom           Prénoom pigiste
-	 * @param joursTravail          nombre de jours travaillés
-	 * @param remuQuotid rémunération quotidienne
+	 * @param nom          Nom pigiste
+	 * @param prenom       Prénom pigiste
+	 * @param joursTravail nombre de jours travaillés
+	 * @param remuQuotid   rémunération quotidienne
 	 */
 	public Pigiste(String nom, String prenom, int joursTravail, double remuQuotid) {
 		super(nom, prenom);

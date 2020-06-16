@@ -40,7 +40,7 @@ public abstract class Intervenant {
 	public abstract String getStatut();
 
 	/**
-	 * Affiche les données d'un intervenant
+	 * Affiche données d'un intervenant
 	 * 
 	 * @return String
 	 */
