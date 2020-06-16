@@ -21,7 +21,7 @@ public class CreationListe {
 			maListe.add(i);
 		}
 		
-		System.out.println(maListe);
+		System.out.println("Taille d'ArrayList : " + maListe.size());
 		
 	}
 
