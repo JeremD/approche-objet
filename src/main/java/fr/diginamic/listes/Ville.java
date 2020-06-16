@@ -43,4 +43,22 @@ public class Ville {
 		return habitants;
 	}
 
+	/**
+	 * Setter
+	 * 
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param habitants the habitants to set
+	 */
+	public void setHabitants(int habitants) {
+		this.habitants = habitants;
+	}
+
 }
