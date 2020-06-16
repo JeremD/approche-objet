@@ -1,7 +1,7 @@
 package fr.diginamic.salaire;
 
 /**
- *  Exercie Calcul Salaire
+ * Exercice Calcul Salaire
  * 
  * @author Jeremy
  *
