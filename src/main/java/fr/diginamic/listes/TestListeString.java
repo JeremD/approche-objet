@@ -19,14 +19,8 @@ public class TestListeString {
 
 		// Liste d'entiers
 		List<String> listeChar = new ArrayList<String>();
-		listeChar.add("Nice");
-		listeChar.add("Carcassonne");
-		listeChar.add("Narbonne");
-		listeChar.add("Lyon");
-		listeChar.add("Foix");
-		listeChar.add("Pau");
-		listeChar.add("Marseille");
-		listeChar.add("Tarbes");
+		
+		listeChar.addAll("Nice", "Carcassonne", "Narbonne", "Lyon", "Foix", "Pau", "Marseille", "Tarbes");
 
 		// Nom de ville la plus longue
 		Iterator<String> iterator = listeChar.iterator();

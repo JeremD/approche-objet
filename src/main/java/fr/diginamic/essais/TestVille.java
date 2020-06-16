@@ -32,6 +32,7 @@ public class TestVille {
 
 		// Ville la plus peuplée
 		Ville maxVille = listeVille.get(0);
+		
 		for (Ville ville : listeVille) {
 			if (ville.getHabitants() > maxVille.getHabitants()) {
 				maxVille = ville;
@@ -41,6 +42,7 @@ public class TestVille {
 
 		// Supprimer ville la moins peuplée
 		Ville minVille = listeVille.get(0);
+		
 		for (Ville ville : listeVille) {
 			if (ville.getHabitants() < minVille.getHabitants()) {
 				minVille = ville;
