@@ -9,7 +9,7 @@ package fr.diginamic.formes;
 public class Cercle extends Forme {
 
 	/* Rayon cercle */
-	public double rayon;
+	protected double rayon;
 	
 	/**
 	 * Constructeur

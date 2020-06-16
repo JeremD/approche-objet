@@ -9,10 +9,10 @@ package fr.diginamic.formes;
 public class Rectangle extends Forme {
 
 	/* Longueur rectangle */
-	public double longueur;
+	protected double longueur;
 
 	/* Largeur rectangle */
-	public double largeur;
+	protected double largeur;
 
 	/**
 	 * Constructeur
