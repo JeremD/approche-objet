@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Exercice Array list
+ * 
  * @author Jeremy
  *
  */
@@ -14,6 +16,7 @@ public class TestListeInt {
 	 */
 	public static void main(String[] args) {
 
+		// Liste d'entiers
 		List<Integer> listeEntiers = new ArrayList<Integer>();
 		listeEntiers.add(-1);
 		listeEntiers.add(5);
@@ -24,6 +27,7 @@ public class TestListeInt {
 		listeEntiers.add(8);
 		listeEntiers.add(5);
 
+		
 		for (int i = 0; i < listeEntiers.size(); i++) {
 			System.out.println(listeEntiers.get(i));
 		}
@@ -65,7 +69,7 @@ public class TestListeInt {
 
 		System.out.println("Plus petit élément supprimé à l'index n° " + indexMin);
 
-		// Recherche éléments négatif
+		// Recherche éléments négatifs
 		int nombreNegatif;
 		
 		for (int i = 0; i < listeEntiers.size(); i++) {
