@@ -8,54 +8,46 @@ package fr.diginamic.maison;
  */
 public class Maison {
 
-	/** pieces : tableau de pièces de la maison */
+	/** tableau de pieces */
 	private Piece[] pieces;
 
 	/**
-	 * Constructeur
+	 * Constructor
 	 */
 	public Maison() {
-		// Initialisation du tableau de pièces
+		// Initialisation tableau de pièces
 		pieces = new Piece[0];
 	}
 
 	/**
-	 * Ajoute une pièce à la maison
+	 * Ajouter une pièce à la maison
 	 * 
-	 * @param nvPiece nouvelle pièce à ajouter
+	 * @param newPiece nouvelle pièce à ajouter
 	 */
-	public void ajouterPiece(Piece nvPiece) {
+	public void ajouterPiece(Piece newPiece) {
 
-		if (nvPiece == null || nvPiece.getEtage() < 0 || nvPiece.getSuperficie() < 0) {
-			System.out.println("Votre pièce est incorrecte");
-			return;
+		// Gestion d'erreur si coordonées pièce inncorect
+		if (newPiece == null || newPiece.getEtage() < 0 || newPiece.getSuperficie() < 0) {
+			System.out.println("La pièce est incorrecte");
 		}
 
-		// On est obligé d'agrandir le tableau initial de 1 à chaque ajout
-		// d'une nouvelle pièce
+		// Angrandissement premier tableau à chaque ajout dans un tableau tabPiece
+		Piece[] tabPiece = new Piece[pieces.length + 1];
 
-		// On commence donc par créer un tableau temporaire appelé newTab
-		// qui a une taille égale à la tableau du tableau pieces+1
-		Piece[] newTab = new Piece[pieces.length + 1];
-
-		// On déverse toutes les pièces du tableau pieces dans newTab
 		for (int i = 0; i < pieces.length; i++) {
-			newTab[i] = pieces[i];
+			tabPiece[i] = pieces[i];
 		}
 
-		// On place en dernière position dans le nouveau tableau la nouvelle
-		// pièce
-		newTab[newTab.length - 1] = nvPiece;
-
-		// Enfin on affecte newTab à pieces
-		this.pieces = newTab;
+		// Dernière pièce à ajouter
+		tabPiece[tabPiece.length - 1] = newPiece;
+		this.pieces = tabPiece;
 	}
 
 	/**
 	 * Retourne la superficie d'un étage
 	 * 
 	 * @param choixEtage choix de l'étage
-	 * @return double
+	 * @return double superficie
 	 */
 	public double superficieEtage(int choixEtage) {
 		double superficieEtage = 0;
@@ -70,14 +62,16 @@ public class Maison {
 	}
 
 	/**
-	 * Retourne la superficie total pour un type de pièce donné
+	 * Retourne la superficie total pour un type de pièce
 	 * 
 	 * @param typePiece type de pièce
 	 * @return double
 	 */
 	public double superficieTypePiece(String typePiece) {
+		
 		double superficie = 0;
 
+		// Appel de getType pour retourner le type de pièce
 		for (int i = 0; i < pieces.length; i++) {
 			if (typePiece != null && typePiece.equals(this.pieces[i].getType())) {
 				superficie = superficie + this.pieces[i].getSuperficie();
@@ -92,14 +86,15 @@ public class Maison {
 	 * 
 	 * @return double
 	 */
-	public double calculerSurface() {
-		double superficieTot = 0;
+	public double supercifieTotal() {
+		
+		double totalSuperficie = 0;
 
 		for (int i = 0; i < pieces.length; i++) {
-			superficieTot = superficieTot + this.pieces[i].getSuperficie();
+			totalSuperficie = totalSuperficie + this.pieces[i].getSuperficie();
 		}
 
-		return superficieTot;
+		return totalSuperficie;
 	}
 
 }

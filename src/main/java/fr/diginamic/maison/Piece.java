@@ -11,7 +11,7 @@ public abstract class Piece {
 	/** superficie */
 	private double superficie;
 
-	/** numéro de l'étage */
+	/** numéro étage */
 	private int etage;
 
 	/** Chambre */
