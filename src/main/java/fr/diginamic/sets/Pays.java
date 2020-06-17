@@ -6,12 +6,15 @@ package fr.diginamic.sets;
  * @author Jeremy
  *
  */
-public class Pays {
+public class Pays implements Comparable<Pays> {
 
+	/** nom */
 	private String nom;
 
+	/** population */
 	private int population;
 
+	/** PIB */
 	private int PIB;
 
 	/**
@@ -19,13 +22,13 @@ public class Pays {
 	 * 
 	 * @param nom
 	 * @param population
-	 * @param piHab
+	 * @param PIB
 	 */
-	public Pays(String nom, int population, int piHab) {
+	public Pays(String nom, int population, int PIB) {
 		super();
 		this.nom = nom;
 		this.population = population;
-		this.PIB = piHab;
+		this.PIB = PIB;
 	}
 
 	/**
@@ -88,7 +91,7 @@ public class Pays {
 	public String toString() {
 		return "Nom : " + nom + ", Population : " + population + ", PIB : " + PIB;
 	}
-	
+
 	/**
 	 * Calcul du PIB Total (besoin de convertir int en double)
 	 * 
@@ -97,5 +100,29 @@ public class Pays {
 	public double getPibTotal() {
 		return (double) population * (double) PIB;
 	}
+
+	/**
+	 * Tri des pays par ordre alphabétique
+	 * 
+	 * @param paysCompare
+	 * @return int
+	 */
+	//@Override
+	/*public int compareTo(Pays paysCompare) {
+		return this.nom.compareTo(paysCompare.getNom());
+	}*/
+	
+	/**
+	 * Tri des pays par PIB croissant
+	 * 
+	 * @param paysCompare
+	 * @return int de compareTo
+	 */
+	@Override
+	public int compareTo(Pays paysCompare) {
+		// astuce pour éviter les if else pour tester 1 ou -1
+		return this.PIB - paysCompare.getPiHab();
+	}
+
 
 }
