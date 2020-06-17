@@ -37,7 +37,7 @@ public class TestSetString {
 		paysHashSet.remove(paysLong);
 		System.out.println("Nouvelle collection de pays : " + paysHashSet);
 
-		// Trie des pays
+		// Tri des pays avec sort()
 		String[] paysArray = {"USA", "France", "Allemagne", "UK", "Italie", "Japon", "Chine", "Russie",
 			"Inde"} ;
 		List<String> listePays = new ArrayList<>();
