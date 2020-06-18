@@ -22,7 +22,7 @@ public class LectureFichier {
 
 		try {
 			// Déclaration du fichier à lire
-			File csvFile = new File("E:/Documents/DEV/tp 6 - DATA - recensement 2010.csv");
+			File csvFile = new File("E:/Documents/DEV/Formations/tp 6 - DATA - recensement 2010.csv");
 
 			// Lecture du fichier
 			List<String> csvLignes = FileUtils.readLines(csvFile, "UTF-8");
