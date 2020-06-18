@@ -65,13 +65,14 @@ public class Application {
 			// Affichage des villes
 			// System.out.println(arrayVille.toString());
 
-			// variable pour trouver les populations dans l'iterator
+			// Variable pour trouver les populations dans l'iterator
 			long populationDepartement = 0;
 			long plusPetiteVille = Long.MAX_VALUE;
 			String nomPetitVille = "";
 
 			// Parcours des villes
 			Iterator<Ville> iteratorVille = arrayVille.iterator();
+			
 			while (iteratorVille.hasNext()) {
 				Ville ville = iteratorVille.next();
 
@@ -97,31 +98,54 @@ public class Application {
 			System.out.println("Ville la plus petite : " + nomPetitVille);
 
 			
-			 //Collections.sort(arrayVille, new Ville(0, nomPetitVille, nomPetitVille, 0,
-			 //nomPetitVille, plusPetiteVille));
+			// Recherche des 10 plus grandes villes de l’Hérault
 			
-			 //for (Ville triPopulation : arrayVille) { System.out.println(triPopulation); }
+			// Stockage des communes de l’Hérault dans un nouvel ArrayList
+			ArrayList<Ville> villeHerault = new ArrayList<>();
 
-			// Affichage des 10 plus grandes villes de l’Hérault
-			
-			// Alimentation de la map
-			HashMap<String, Long> mapVille = new HashMap<>();
-
-			for (Ville ville : arrayVille) {
-				if (ville.getCodeDepartement().equals("34")) {
-					mapVille.put(ville.getCodeDepartement(), ville.getPopulationCommune());
+			// Ajout de chaque ville depuis l'Array Liste existante
+			for (int i = 0; i < arrayVille.size(); i++) {
+				Ville addVille = arrayVille.get(i);
+				
+				if (addVille.getCodeDepartement().equals("34")) {
+					villeHerault.add(addVille);
 				}
 			}
 			
-			Ville villeMax = mapVille.values().iterator().next();
+			// Tri des 10 plus grandes villes
+			Collections.sort(arrayVille, new CommunePlusGrandeComparator());
+			
+			System.out.println("\rLes 10 plus grandes villes de l’Hérault : ");
+			
+			for (int i = 0; i < 10; i++) {
+				System.out.println(villeHerault.get(i).getNomCommune());
+			}
+			
+			// Alimentation de la map (commune + population)
+			/*HashMap<String, Long> mapVille = new HashMap<>();
 
-			// Recherche des 10 plus grandes villes de l’Hérault
-			/*for (Ville ville : arrayVille.values()) {
-				if (ville.getPopulationCommune() > villeMax.getPopulationCommune()) {
-					villeMax = ville;
-					System.out.println(ville);
+			for (Ville ville : arrayVille) {
+				if (ville.getCodeDepartement().equals("34")) {
+					mapVille.put(ville.getNomCommune(), ville.getPopulationCommune());
 				}
+			}
+			
+			// Parcours de la map
+			Iterator<String> valueMapVille = mapVille.keySet().iterator();
+			
+			String plusGrandVilles = "";
+			
+			Collections.sort(list);*/
+			
+			/*while (valueMapVille.hasNext()) {
+				plusGrandVilles = valueMapVille.next();
 			}*/
+
+			/*System.out.println("Les 10 plus grandes villes de l’Hérault : ");
+			for (int i = 0; i < 10; i++) {
+				System.out.println(plusGrandVilles);
+			}*/
+			
 
 		} catch (IOException e) {
 			System.out.println(e.getMessage());

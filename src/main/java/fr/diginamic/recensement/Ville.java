@@ -10,7 +10,7 @@ import java.util.Comparator;
  * @author Jeremy
  *
  */
-public class Ville implements Comparator<Ville> {
+public class Ville {
 
 	/** code région */
 	private int codeRegion;
@@ -112,19 +112,6 @@ public class Ville implements Comparator<Ville> {
 		return "\nVille de " + nomCommune + ", Code région : " + codeRegion + ", Nom région : " + nomRegion
 				+ ", Code département : " + codeDepartement + ", Code Commune : " + codeCommune
 				+ ",  Population Commune : " + populationCommune;
-	}
-
-	/**
-	 * Comparer une ville
-	 */
-	@Override
-	public int compare(Ville v1, Ville v2) {
-		if (v1.getPopulationCommune() > v1.getPopulationCommune()) {
-			return 1;
-		} else if (v1.getPopulationCommune() < v1.getPopulationCommune()) {
-			return -1;
-		}
-		return 0;
 	}
 
 }
