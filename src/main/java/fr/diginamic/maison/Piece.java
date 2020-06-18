@@ -36,7 +36,6 @@ public abstract class Piece {
 	 * @param etage
 	 */
 	public Piece(double superficie, int etage) {
-		super();
 		this.superficie = superficie;
 		this.etage = etage;
 	}
