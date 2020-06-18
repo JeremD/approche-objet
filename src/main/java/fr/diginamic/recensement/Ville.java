@@ -1,5 +1,7 @@
 package fr.diginamic.recensement;
 
+import java.util.Comparator;
+
 /**
  * Exercice en autoformation
  * 
@@ -8,7 +10,7 @@ package fr.diginamic.recensement;
  * @author Jeremy
  *
  */
-public class Ville {
+public class Ville implements Comparator<Ville> {
 
 	/** code région */
 	private int codeRegion;
@@ -54,7 +56,7 @@ public class Ville {
 	 * @return nomCommune
 	 */
 	public String getNomCommune() {
-		return nomCommune;
+		return this.nomCommune;
 	}
 
 	/**
@@ -72,7 +74,7 @@ public class Ville {
 	 * @return codeDepartement
 	 */
 	public String getCodeDepartement() {
-		return codeDepartement;
+		return this.codeDepartement;
 	}
 
 	/**
@@ -84,28 +86,45 @@ public class Ville {
 		this.codeDepartement = codeDepartement;
 	}
 
-	
-	/** Getter
+	/**
+	 * Getter
+	 * 
 	 * @return the populationTotale
 	 */
 	public long getPopulationCommune() {
-		return populationCommune;
+		return this.populationCommune;
 	}
 
-	/** Setter
+	/**
+	 * Setter
+	 * 
 	 * @param populationTotale to set
 	 */
 	public void setPopulationCommune(long populationCommune) {
 		this.populationCommune = populationCommune;
 	}
 
-	
 	/**
-	 * Affichage d'une ville
+	 * Afficher les informations d'une ville
 	 */
 	@Override
 	public String toString() {
-		return "\nVille de " + nomCommune + ", Code région : " + codeRegion + ", Nom région : " + nomRegion + ", Code département : " + codeDepartement + ", Code Commune : " + codeCommune + ",  Population Commune : " + populationCommune;
+		return "\nVille de " + nomCommune + ", Code région : " + codeRegion + ", Nom région : " + nomRegion
+				+ ", Code département : " + codeDepartement + ", Code Commune : " + codeCommune
+				+ ",  Population Commune : " + populationCommune;
+	}
+
+	/**
+	 * Comparer une ville
+	 */
+	@Override
+	public int compare(Ville v1, Ville v2) {
+		if (v1.getPopulationCommune() > v1.getPopulationCommune()) {
+			return 1;
+		} else if (v1.getPopulationCommune() < v1.getPopulationCommune()) {
+			return -1;
+		}
+		return 0;
 	}
 
 }

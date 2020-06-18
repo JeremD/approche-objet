@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import org.apache.commons.io.FileUtils;
@@ -52,16 +53,21 @@ public class Application {
 				
 				// Suppression des espaces génants dans les nombres
 				String formatNombre = csvSplit[9].replaceAll("\\s+", "");
-				long populationTotale = Long.parseLong(formatNombre);
+				long populationCommune = Long.parseLong(formatNombre);
 
-				arrayVille.add(
-						new Ville(codeRegion, nomRegion, codeDepartement, codeCommune, nomCommune, populationTotale));
+				// Ajout dans l'ArrayList
+				arrayVille.add( new Ville(codeRegion, nomRegion, codeDepartement, codeCommune, nomCommune, populationCommune));
 
 			}
 
-			// Affichage des ville
+			// Affichage des villes
 			//System.out.println(arrayVille.toString());
 
+			// variable pour trouver les populations dans l'iterator
+			long populationDepartement = 0;
+			long plusPetiteVille = Long.MAX_VALUE;
+			String nomPetitVille = "";
+			
 			// Parcours des villes
 			Iterator<Ville> iteratorVille = arrayVille.iterator();
 			while (iteratorVille.hasNext()) {
@@ -72,15 +78,27 @@ public class Application {
 					System.out.println(ville);
 				}
 				
-				// Affichage de la population totale de l'Hérault
-				int populationDepartement = 0;
-				
+				// Addition de la population totale pour l'Hérault
 				if (ville.getCodeDepartement().equals("34")) {
-					System.out.println(ville.getPopulationCommune());
+					populationDepartement = populationDepartement + ville.getPopulationCommune();
+				}
+				
+				// Affichage de la plus petite ville
+				if (ville.getPopulationCommune() < plusPetiteVille) {
+					plusPetiteVille = ville.getPopulationCommune();
+					nomPetitVille = ville.getNomCommune();
 				}
 
 			}
+			System.out.println("Population totale de l'Herault : " + populationDepartement + " habitants");
+			
+			System.out.println("Ville la plus petite : " + nomPetitVille);
 
+			// Affichage des 10 plus grandes villes
+			Collections.sort(arrayVille, new Ville());
+			
+			
+			
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
