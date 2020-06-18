@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import org.apache.commons.io.FileUtils;
@@ -34,7 +35,7 @@ public class Application {
 
 			// Ommit de l'entête du csv
 			csvLignes.remove(0);
-			
+
 			// Instantiation Ville dans un ArrayList
 			List<Ville> arrayVille = new ArrayList<>();
 
@@ -50,24 +51,25 @@ public class Application {
 				String codeDepartement = csvSplit[2];
 				int codeCommune = Integer.parseInt(csvSplit[5]);
 				String nomCommune = csvSplit[6];
-				
+
 				// Suppression des espaces génants dans les nombres
 				String formatNombre = csvSplit[9].replaceAll("\\s+", "");
 				long populationCommune = Long.parseLong(formatNombre);
 
 				// Ajout dans l'ArrayList
-				arrayVille.add( new Ville(codeRegion, nomRegion, codeDepartement, codeCommune, nomCommune, populationCommune));
+				arrayVille.add(
+						new Ville(codeRegion, nomRegion, codeDepartement, codeCommune, nomCommune, populationCommune));
 
 			}
 
 			// Affichage des villes
-			//System.out.println(arrayVille.toString());
+			// System.out.println(arrayVille.toString());
 
 			// variable pour trouver les populations dans l'iterator
 			long populationDepartement = 0;
 			long plusPetiteVille = Long.MAX_VALUE;
 			String nomPetitVille = "";
-			
+
 			// Parcours des villes
 			Iterator<Ville> iteratorVille = arrayVille.iterator();
 			while (iteratorVille.hasNext()) {
@@ -77,12 +79,12 @@ public class Application {
 				if (ville.getNomCommune().equals("Montpellier")) {
 					System.out.println(ville);
 				}
-				
+
 				// Addition de la population totale pour l'Hérault
 				if (ville.getCodeDepartement().equals("34")) {
 					populationDepartement = populationDepartement + ville.getPopulationCommune();
 				}
-				
+
 				// Affichage de la plus petite ville
 				if (ville.getPopulationCommune() < plusPetiteVille) {
 					plusPetiteVille = ville.getPopulationCommune();
@@ -91,14 +93,36 @@ public class Application {
 
 			}
 			System.out.println("Population totale de l'Herault : " + populationDepartement + " habitants");
-			
+
 			System.out.println("Ville la plus petite : " + nomPetitVille);
 
-			// Affichage des 10 plus grandes villes
-			Collections.sort(arrayVille, new Ville());
 			
+			 //Collections.sort(arrayVille, new Ville(0, nomPetitVille, nomPetitVille, 0,
+			 //nomPetitVille, plusPetiteVille));
 			
+			 //for (Ville triPopulation : arrayVille) { System.out.println(triPopulation); }
+
+			// Affichage des 10 plus grandes villes de l’Hérault
 			
+			// Alimentation de la map
+			HashMap<String, Long> mapVille = new HashMap<>();
+
+			for (Ville ville : arrayVille) {
+				if (ville.getCodeDepartement().equals("34")) {
+					mapVille.put(ville.getCodeDepartement(), ville.getPopulationCommune());
+				}
+			}
+			
+			Ville villeMax = mapVille.values().iterator().next();
+
+			// Recherche des 10 plus grandes villes de l’Hérault
+			/*for (Ville ville : arrayVille.values()) {
+				if (ville.getPopulationCommune() > villeMax.getPopulationCommune()) {
+					villeMax = ville;
+					System.out.println(ville);
+				}
+			}*/
+
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
