@@ -1,7 +1,6 @@
 package fr.diginamic.fichier;
 
 import java.io.File;
-import java.util.Iterator;
 import java.util.List;
 import org.apache.commons.io.FileUtils;
 
@@ -22,7 +21,7 @@ public class LectureFichier {
 
 		try {
 			// Déclaration du fichier à lire
-			File csvFile = new File("E:/Documents/DEV/Formations/tp 6 - DATA - recensement 2010.csv");
+			File csvFile = new File("C:/tp 6 - DATA - recensement 2010.csv");
 
 			// Lecture du fichier
 			List<String> csvLignes = FileUtils.readLines(csvFile, "UTF-8");
@@ -34,8 +33,6 @@ public class LectureFichier {
 			System.out.println("Nombre de lignes : " + csvLignes.size());
 
 		} catch (IOException e) {
-
-			// Affichage exception
 			System.out.println(e.getMessage());
 		}
 
