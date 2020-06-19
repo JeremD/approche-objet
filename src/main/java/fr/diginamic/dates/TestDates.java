@@ -17,7 +17,7 @@ public class TestDates {
 	public static void main(String[] args) {
 		
 		// Instanciation de la date
-		Date maDate = DateUtils.getDate(2020, 6, 19, 23, 59, 30);
+		Date maDate = DateUtils.getDate(2020, 5, 19, 23, 59, 30);
 
 		// Formattage et affichage date
 		SimpleDateFormat formatCalendrier = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss a");
