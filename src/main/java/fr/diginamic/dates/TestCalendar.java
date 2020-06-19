@@ -5,7 +5,6 @@ import java.util.Date;
 import fr.diginamic.utils.DateUtils;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 /**
  * @author Jeremy

@@ -1,10 +1,9 @@
 package fr.diginamic.dates;
 
-import java.util.Date;
 import fr.diginamic.utils.DateUtils;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @author Jeremy
@@ -21,7 +20,7 @@ public class TestDates {
 		Date maDate = DateUtils.getDate(2020, 6, 19, 23, 59, 30);
 
 		// Formattage et affichage date
-		SimpleDateFormat formatCalendrier = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+		SimpleDateFormat formatCalendrier = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss a");
 		
 		System.out.println(formatCalendrier.format(maDate));
 	}
