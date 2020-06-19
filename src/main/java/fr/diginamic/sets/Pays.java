@@ -1,5 +1,7 @@
 package fr.diginamic.sets;
 
+import fr.diginamic.testenumeration.Continent;
+
 /**
  * Exercice Set & HashSet
  * 
@@ -17,6 +19,8 @@ public class Pays implements Comparable<Pays> {
 	/** PIB */
 	private int PIB;
 
+	private Continent continent;
+
 	/**
 	 * Constructor
 	 * 
@@ -24,11 +28,30 @@ public class Pays implements Comparable<Pays> {
 	 * @param population
 	 * @param PIB
 	 */
-	public Pays(String nom, int population, int PIB) {
+	public Pays(String nom, int population, int PIB, Continent continent) {
 		super();
 		this.nom = nom;
 		this.population = population;
 		this.PIB = PIB;
+		this.continent = continent;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the continent
+	 */
+	public Continent getContinent() {
+		return continent;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param the continent to set
+	 */
+	public void setContinent(Continent continent) {
+		this.continent = continent;
 	}
 
 	/**
@@ -43,7 +66,7 @@ public class Pays implements Comparable<Pays> {
 	/**
 	 * Setter
 	 * 
-	 * @param nom the nom to set
+	 * @param the nom to set
 	 */
 	public void setNom(String nom) {
 		this.nom = nom;
@@ -107,11 +130,12 @@ public class Pays implements Comparable<Pays> {
 	 * @param paysCompare
 	 * @return int
 	 */
-	//@Override
-	/*public int compareTo(Pays paysCompare) {
-		return this.nom.compareTo(paysCompare.getNom());
-	}*/
-	
+	// @Override
+	/*
+	 * public int compareTo(Pays paysCompare) { return
+	 * this.nom.compareTo(paysCompare.getNom()); }
+	 */
+
 	/**
 	 * Tri des pays par PIB croissant
 	 * 
@@ -123,6 +147,5 @@ public class Pays implements Comparable<Pays> {
 		// astuce pour éviter les if else pour tester 1 ou -1
 		return this.PIB - paysCompare.getPiHab();
 	}
-
 
 }

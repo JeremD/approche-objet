@@ -6,7 +6,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import fr.diginamic.testenumeration.Continent;
+
 /**
+ * Set & Enum
+ * 
  * @author Jeremy
  *
  */
@@ -19,15 +23,15 @@ public class TestPays {
 
 		Set<Pays> setPays = new HashSet<>();
 
-		setPays.add(new Pays("USA", 328_239_523, 62606));
-		setPays.add(new Pays("France", 69_861_344, 43551));
-		setPays.add(new Pays("Allemagne", 82_801_531, 50206));
-		setPays.add(new Pays("UK", 63_421_628, 43620));
-		setPays.add(new Pays("Italie", 61_302_519, 37970));
-		setPays.add(new Pays("Japon", 124_856_424, 42659));
-		setPays.add(new Pays("Chine", 1_408_089_559, 16624));
-		setPays.add(new Pays("Russie", 126_434_660, 27900));
-		setPays.add(new Pays("Inde", 1_386_249_417, 5174));
+		setPays.add(new Pays("USA", 328_239_523, 62606, Continent.AMERIQUE));
+		setPays.add(new Pays("France", 69_861_344, 43551, Continent.EUROPE));
+		setPays.add(new Pays("Allemagne", 82_801_531, 50206, Continent.EUROPE));
+		setPays.add(new Pays("UK", 63_421_628, 43620, Continent.EUROPE));
+		setPays.add(new Pays("Italie", 61_302_519, 37970, Continent.EUROPE));
+		setPays.add(new Pays("Japon", 124_856_424, 42659, Continent.ASIE));
+		setPays.add(new Pays("Chine", 1_408_089_559, 16624, Continent.ASIE));
+		setPays.add(new Pays("Russie", 126_434_660, 27900, Continent.ASIE));
+		setPays.add(new Pays("Inde", 1_386_249_417, 5174, Continent.ASIE));
 
 		// Recherche du pays avec le plus grand PIB
 		Pays payMax = setPays.iterator().next();
@@ -70,13 +74,23 @@ public class TestPays {
 		
 		// Boucle pour parcourir tous les pays
 		for (Pays pays : listePays) {
-			//System.out.println(pays.getNom());
 			System.out.println(pays.getNom() + pays.getPibTotal());
 		}
 		
 		// Tri sur le pays le plus peuplé
 		//Collections.sort(listePays, new ComparatorPIBHabitant());
 
+		// Enum
+		Set<Pays> enumPays = new HashSet<>();
+		
+		/*for (Continent continent : continents) {
+			System.out.println(continent.getLibelle());
+		}*/
+
+		//Continent getContinent = Continent.valueOf("AMERIQUE");
+		
+		enumPays.add(new Pays("USA", 328_239_523, 62606, Continent.AMERIQUE));
+		
 	}
 
 }
