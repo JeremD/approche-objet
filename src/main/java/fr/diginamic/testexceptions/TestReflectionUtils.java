@@ -4,7 +4,7 @@ import fr.diginamic.exceptions.ReflectionException;
 import fr.diginamic.sets.Pays;
 
 /**
- * Gestion des Exceptiosn
+ * Gestion des Exceptions
  * 
  * @author Jeremy
  *
