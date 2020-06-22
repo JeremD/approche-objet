@@ -10,15 +10,15 @@ import java.util.Comparator;
  * @author Jeremy
  *
  */
-public class CommunePlusGrandeComparator implements Comparator<Ville> {
+public class CommunePlusPetiteComparator implements Comparator<Ville> {
 	
 	/**
-	 * Comparator de la population décroissante
+	 * Comparator de la population croissante
 	 */
 	public int compare(Ville v1, Ville v2) {
-		if (v1.getPopulationCommune() < v2.getPopulationCommune()) {
+		if (v1.getPopulationCommune() > v2.getPopulationCommune()) {
 			return 1;
-		} else if (v1.getPopulationCommune() > v2.getPopulationCommune()) {
+		} else if (v1.getPopulationCommune() < v2.getPopulationCommune()) {
 			return -1;
 		}
 		return 0;

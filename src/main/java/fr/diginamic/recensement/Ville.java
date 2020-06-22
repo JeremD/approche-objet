@@ -1,7 +1,5 @@
 package fr.diginamic.recensement;
 
-import java.util.Comparator;
-
 /**
  * Exercice en autoformation
  * 
@@ -109,7 +107,7 @@ public class Ville {
 	 */
 	@Override
 	public String toString() {
-		return "\nVille de " + nomCommune + ", Code région : " + codeRegion + ", Nom région : " + nomRegion
+		return "Ville de " + nomCommune + " --> Code région : " + codeRegion + ", Nom région : " + nomRegion
 				+ ", Code département : " + codeDepartement + ", Code Commune : " + codeCommune
 				+ ",  Population Commune : " + populationCommune;
 	}
