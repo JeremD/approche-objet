@@ -117,22 +117,12 @@ public class Pays {
 	}
 
 	/**
-	 * Calcul du PIB Total (besoin de convertir int en double)
+	 * Calcul du PIB Total
 	 * 
-	 * @return
+	 * @return double
 	 */
 	public double getPibTotal() {
 		return (double) population * (double) PIB;
 	}
-
-	/**
-	 * Tri des pays par PIB croissant
-	 * 
-	 * @param paysCompare
-	 * @return int de compareTo
-	 */
-	/*
-	 * @Override 
-	 */
 
 }
