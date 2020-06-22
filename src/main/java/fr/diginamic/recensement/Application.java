@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.Set;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -161,17 +162,17 @@ public class Application {
 			}
 			
 			//----------------------------------
-			// Recherche des villes sur toute la France
+			// Recherche des départements les plus peuplés
 			//----------------------------------
-			Map<String, Long> plusGrandFrance = new HashMap<>();
+			/*
+			// Stockage de tous les départements dans un Set
+			Map<Integer, Departement> mapDepartement = new HashMap<>();
 			
-			// Ajout de chaque ville depuis la liste des villes
-			Iterator<Ville> iteratorFrance = listeVille.iterator();
-			
-			while (iteratorFrance.hasNext()) {
+			for (int i = 0; i < listeVille.size(); i++) {
+				Ville ville = listeVille.get(i);
 				
-			}
-			
+				Integer codeDepartement = ville.getCodeDepartement();
+			}*/
 			
 		} catch (IOException e) {
 			System.err.println(e.getMessage());
