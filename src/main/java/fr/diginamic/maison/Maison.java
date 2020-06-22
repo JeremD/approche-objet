@@ -1,7 +1,12 @@
 package fr.diginamic.maison;
 
+
+import fr.diginamic.exceptions.NumberFormatException;
+
 /**
  * Exercice Immobilier
+ * 
+ * Classe qui gère la manipulation d'une maison 
  * 
  * @author Jeremy
  *
@@ -13,9 +18,11 @@ public class Maison {
 
 	/**
 	 * Constructor
+	 * 
+	 * Contient un tableau de pièce
+	 * 
 	 */
 	public Maison() {
-		// Initialisation tableau de pièces
 		pieces = new Piece[0];
 	}
 
@@ -24,14 +31,14 @@ public class Maison {
 	 * 
 	 * @param newPiece nouvelle pièce à ajouter
 	 */
-	public void ajouterPiece(Piece newPiece) {
+	public void ajouterPiece(Piece newPiece) throws NumberFormatException {
 
-		// Gestion d'erreur si coordonées pièce inncorect
+		// Exception si nombre négatif pour l'étage ou la superficie 
 		if (newPiece == null || newPiece.getEtage() < 0 || newPiece.getSuperficie() < 0) {
-			System.out.println("La pièce est incorrecte");
+			throw new NumberFormatException("La pièce est mal renseignée");
 		}
 
-		// Angrandissement premier tableau à chaque ajout dans un tableau tabPiece
+		// Angrandissement du premier tableau à chaque ajout dans un tableau tabPiece
 		Piece[] tabPiece = new Piece[pieces.length + 1];
 
 		for (int i = 0; i < pieces.length; i++) {
@@ -44,7 +51,7 @@ public class Maison {
 	}
 
 	/**
-	 * Retourne la superficie d'un étage
+	 * Retourner la superficie d'un étage
 	 * 
 	 * @param choixEtage choix de l'étage
 	 * @return double superficie
@@ -57,18 +64,17 @@ public class Maison {
 				superficieEtage = superficieEtage + this.pieces[i].getSuperficie();
 			}
 		}
-
 		return superficieEtage;
 	}
 
 	/**
-	 * Retourne la superficie total pour un type de pièce
+	 * Retourner la superficie total pour un type de pièce
 	 * 
 	 * @param typePiece type de pièce
 	 * @return double
 	 */
 	public double superficieTypePiece(String typePiece) {
-		
+
 		double superficie = 0;
 
 		// Appel de getType pour retourner le type de pièce
@@ -77,23 +83,21 @@ public class Maison {
 				superficie = superficie + this.pieces[i].getSuperficie();
 			}
 		}
-
 		return superficie;
 	}
 
 	/**
-	 * Retourne la surface totale
+	 * Retourner la surface totale
 	 * 
 	 * @return double
 	 */
 	public double supercifieTotal() {
-		
+
 		double totalSuperficie = 0;
 
 		for (int i = 0; i < pieces.length; i++) {
 			totalSuperficie = totalSuperficie + this.pieces[i].getSuperficie();
 		}
-
 		return totalSuperficie;
 	}
 

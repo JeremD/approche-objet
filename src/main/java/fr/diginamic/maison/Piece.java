@@ -3,6 +3,8 @@ package fr.diginamic.maison;
 /**
  * Exercice Immobilier
  * 
+ * Classe abstraite pour la création de pièce
+ * 
  * @author Jeremy
  *
  */
@@ -14,19 +16,19 @@ public abstract class Piece {
 	/** numéro étage */
 	private int etage;
 
-	/** Chambre */
+	/** type chambre */
 	public static final String TYPE_CHAMBRE = "Chambre";
 
-	/** Salon */
+	/** type salon */
 	public static final String TYPE_SALON = "Salon";
 
-	/** Cuisine */
+	/** type cuisine */
 	public static final String TYPE_CUISINE = "Cuisine";
 
-	/** WC */
+	/** type WC */
 	public static final String TYPE_WC = "WC";
 
-	/** Salle de bain */
+	/** type salle de bain */
 	public static final String TYPE_SALLE_DE_BAIN = "Salle de bain";
 
 	/**

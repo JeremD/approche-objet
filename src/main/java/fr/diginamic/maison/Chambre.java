@@ -3,6 +3,8 @@ package fr.diginamic.maison;
 /**
  * Exercice Immobilier
  * 
+ * Classe Chambre
+ * 
  * @author Jeremy
  *
  */
@@ -18,6 +20,9 @@ public class Chambre extends Piece {
 		super(superficie, etage);
 	}
 
+	/**
+	 * Type de pièce
+	 */
 	@Override
 	public String getType() {
 		return TYPE_CHAMBRE;

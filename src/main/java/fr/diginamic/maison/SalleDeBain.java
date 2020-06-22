@@ -3,12 +3,15 @@ package fr.diginamic.maison;
 /**
  * Exercice Immobilier
  * 
+ * Classe SalleDeBain
  * @author Jeremy
  *
  */
 public class SalleDeBain extends Piece {
 
-	/** Constructor
+	/**
+	 * Constructor
+	 * 
 	 * @param superficie
 	 * @param etage
 	 */
@@ -16,6 +19,9 @@ public class SalleDeBain extends Piece {
 		super(superficie, etage);
 	}
 
+	/**
+	 * Type de pièce
+	 */
 	@Override
 	public String getType() {
 		return TYPE_SALLE_DE_BAIN;

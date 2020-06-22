@@ -3,6 +3,7 @@ package fr.diginamic.maison;
 /**
  * Exercice Immobilier
  * 
+ * Classe Salon
  * @author Jeremy
  *
  */
@@ -18,6 +19,9 @@ public class Salon extends Piece {
 		super(superficie, etage);
 	}
 
+	/**
+	 * Type de pièce
+	 */
 	@Override
 	public String getType() {
 		return TYPE_SALON;
