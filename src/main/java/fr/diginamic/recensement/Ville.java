@@ -87,7 +87,7 @@ public class Ville {
 	/**
 	 * Getter
 	 * 
-	 * @return the populationTotale
+	 * @return the populationCommune
 	 */
 	public long getPopulationCommune() {
 		return this.populationCommune;
@@ -96,12 +96,30 @@ public class Ville {
 	/**
 	 * Setter
 	 * 
-	 * @param populationTotale to set
+	 * @param populationCommune to set
 	 */
 	public void setPopulationCommune(long populationCommune) {
 		this.populationCommune = populationCommune;
 	}
 
+	/**
+	 * Getter
+	 * 
+	 * @return nomRegion
+	 */
+	public String getNomRegion() {
+		return nomRegion;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param the nomRegion to set
+	 */
+	public void setNomRegion(String nomRegion) {
+		this.nomRegion = nomRegion;
+	}
+	
 	/**
 	 * Afficher les informations d'une ville
 	 */

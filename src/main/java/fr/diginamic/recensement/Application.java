@@ -8,6 +8,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.commons.io.FileUtils;
 
 /**
@@ -65,6 +67,7 @@ public class Application {
 
 			// Variables pour trouver les populations via l'iterator
 			long populationDepartement = 0;
+			long populationRegion = 0;
 			long plusPetiteVille = Long.MAX_VALUE;
 			String nomPetitVille = "";
 
@@ -79,9 +82,14 @@ public class Application {
 					System.out.println(ville);
 				}
 
-				// Addition de la population totale pour l'Hérault
+				// Addition de la population totale de l'Hérault
 				if (ville.getCodeDepartement().equals("34")) {
 					populationDepartement = populationDepartement + ville.getPopulationCommune();
+				}
+				
+				// Addition de la population totale de l'Occitanie
+				if (ville.getNomRegion().equals("Occitanie")) {
+					populationRegion += ville.getPopulationCommune();
 				}
 
 				// Affichage de la plus petite ville
@@ -89,16 +97,19 @@ public class Application {
 					plusPetiteVille = ville.getPopulationCommune();
 					nomPetitVille = ville.getNomCommune();
 				}
-
 			}
-			System.out.println("\rPopulation totale de l'Hérault : " + populationDepartement + " habitants\r");
-			System.out.println("Ville la plus petite : " + nomPetitVille);
-
-			//---------------------------------------------------
-			// Recherche des 10 plus grandes villes de l’Hérault
+			
+			// Affichage des résultats
+			System.out.println("\rPopulation totale de l'Hérault : " + populationDepartement + " habitants");
+			System.out.println("Population totale de l'Occitanie : " + populationRegion + " habitants");
+			System.out.println("Ville la plus petite de France : " + nomPetitVille);
+			
+			//----------------------------------
+			// Recherche des villes de l’Hérault
+			//----------------------------------
 			
 			// Stockage des communes de l’Hérault dans un nouvel ArrayList
-			ArrayList<Ville> villeHerault = new ArrayList<>();
+			List<Ville> villeHerault = new ArrayList<>();
 
 			// Ajout de chaque ville depuis la liste des villes
 			for (int i = 0; i < listeVille.size(); i++) {
@@ -125,32 +136,43 @@ public class Application {
 				System.out.println(villeHerault.get(i).getNomCommune());
 			}
 			
-			// Alimentation de la map (commune + population)
-			/*HashMap<String, Long> mapVille = new HashMap<>();
-
-			for (Ville ville : arrayVille) {
-				if (ville.getCodeDepartement().equals("34")) {
-					mapVille.put(ville.getNomCommune(), ville.getPopulationCommune());
+			//----------------------------------
+			// Recherche des villes de l’Occitanie
+			//----------------------------------
+			
+			// Stockage des communes de l’Occitanie dans un nouvel ArrayList
+			List<Ville> villeOccitanie = new ArrayList<>();
+			
+			// Ajout de chaque ville depuis la liste des villes
+			for (int i = 0; i < listeVille.size(); i++) {
+				Ville addVille = listeVille.get(i);
+				
+				if (addVille.getNomRegion().equals("Occitanie")) {
+					villeOccitanie.add(addVille);
 				}
 			}
 			
-			// Parcours de la map
-			Iterator<String> valueMapVille = mapVille.keySet().iterator();
-			
-			String plusGrandVilles = "";
-			
-			Collections.sort(list);*/
-			
-			/*while (valueMapVille.hasNext()) {
-				plusGrandVilles = valueMapVille.next();
-			}*/
+			// Tri et affichage des 10 plus grandes villes de l’Occitanie
+			Collections.sort(villeOccitanie, new CommunePlusGrandeComparator());
+			System.out.println("\rLes 10 plus grandes villes de l’Occitanie : ");
 
-			/*System.out.println("Les 10 plus grandes villes de l’Hérault : ");
 			for (int i = 0; i < 10; i++) {
-				System.out.println(plusGrandVilles);
-			}*/
+				System.out.println(villeOccitanie.get(i).getNomCommune());
+			}
 			
-
+			//----------------------------------
+			// Recherche des villes sur toute la France
+			//----------------------------------
+			Map<String, Long> plusGrandFrance = new HashMap<>();
+			
+			// Ajout de chaque ville depuis la liste des villes
+			Iterator<Ville> iteratorFrance = listeVille.iterator();
+			
+			while (iteratorFrance.hasNext()) {
+				
+			}
+			
+			
 		} catch (IOException e) {
 			System.err.println(e.getMessage());
 		}
