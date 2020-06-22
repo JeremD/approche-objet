@@ -2,8 +2,10 @@ package fr.diginamic.sets;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import fr.diginamic.testenumeration.Continent;
@@ -33,11 +35,11 @@ public class TestPays {
 		setPays.add(new Pays("Russie", 126_434_660, 27900, Continent.ASIE));
 		setPays.add(new Pays("Inde", 1_386_249_417, 5174, Continent.ASIE));
 
-		// Recherche du pays avec le plus grand PIB
+		// Recherche du pays le plus peuplée
 		Pays payMax = setPays.iterator().next();
 
 		for (Pays pays : setPays) {
-			if (payMax.getPiHab() > pays.getPiHab()) {
+			if (payMax.getPopulation() < pays.getPopulation()) {
 				payMax = pays;
 			}
 		}
@@ -59,38 +61,47 @@ public class TestPays {
 		Pays payMin = setPays.iterator().next();
 
 		for (Pays pays : setPays) {
-			if (payMin.getPiHab() < pays.getPiHab()) {
+			if (payMin.getPibHab() > pays.getPibHab()) {
 				payMin = pays;
 			}
 		}
 		System.out.println("\rPays avec le plus petit PIB :  ");
-		System.out.println(payMin.toString());
-		
+		System.out.println(payMin.toString() + "\r");
+
 		// Tri des pays avec compareTo() selon le critère féfinis
 		List<Pays> listePays = new ArrayList<>();
 		listePays.addAll(setPays);
-		
-		Collections.sort(listePays);
-		
-		// Boucle pour parcourir tous les pays
-		for (Pays pays : listePays) {
-			System.out.println(pays.getNom() + pays.getPibTotal());
-		}
-		
-		// Tri sur le pays le plus peuplé
-		//Collections.sort(listePays, new ComparatorPIBHabitant());
 
+		Collections.sort(listePays, new PaysComparator());
+
+		// Boucle pour parcourir tous les pays et les afficher en majuscule
+		System.out.println("Pays par ordre alphabétique : ");
+		for (Pays pays : listePays) {
+				pays.setNom(pays.getNom().toUpperCase());
+			System.out.println(pays.getNom());
+		}
+
+		// --------------------------------------------------------------------//
 		// Enum
 		Set<Pays> enumPays = new HashSet<>();
-		
-		/*for (Continent continent : continents) {
-			System.out.println(continent.getLibelle());
-		}*/
-
-		//Continent getContinent = Continent.valueOf("AMERIQUE");
-		
 		enumPays.add(new Pays("USA", 328_239_523, 62606, Continent.AMERIQUE));
-		
+
+		// Compteur pour parcourir chaque continent
+		Map<Continent, Integer> comptage = new HashMap<>();
+
+		for (Continent continent : Continent.values()) {
+			comptage.put(continent, 0);
+		}
+
+		// Comptage des continents
+		for (Pays pays : setPays) {
+			Integer compteur = comptage.get(pays.getContinent());
+			compteur++;
+			comptage.put(pays.getContinent(), compteur);
+		}
+
+		System.out.println("\rNombre de pays par continent : " + comptage);
+
 	}
 
 }

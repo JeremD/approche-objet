@@ -8,7 +8,7 @@ import fr.diginamic.testenumeration.Continent;
  * @author Jeremy
  *
  */
-public class Pays implements Comparable<Pays> {
+public class Pays {
 
 	/** nom */
 	private String nom;
@@ -19,6 +19,7 @@ public class Pays implements Comparable<Pays> {
 	/** PIB */
 	private int PIB;
 
+	/** continent */
 	private Continent continent;
 
 	/**
@@ -93,18 +94,18 @@ public class Pays implements Comparable<Pays> {
 	/**
 	 * Getter
 	 * 
-	 * @return the piHab
+	 * @return the PIB
 	 */
-	public int getPiHab() {
+	public int getPibHab() {
 		return PIB;
 	}
 
 	/**
 	 * Setter
 	 * 
-	 * @param PIB the piHab to set
+	 * @param the PIB to set
 	 */
-	public void setPiHab(int PIB) {
+	public void setPibHab(int PIB) {
 		this.PIB = PIB;
 	}
 
@@ -112,7 +113,7 @@ public class Pays implements Comparable<Pays> {
 	 * Mise en forme de l'affichage
 	 */
 	public String toString() {
-		return "Nom : " + nom + ", Population : " + population + ", PIB : " + PIB;
+		return "Nom : " + nom + ", Population : " + population + ", PIB : " + PIB + ", Continent : " + continent;
 	}
 
 	/**
@@ -125,27 +126,13 @@ public class Pays implements Comparable<Pays> {
 	}
 
 	/**
-	 * Tri des pays par ordre alphabétique
-	 * 
-	 * @param paysCompare
-	 * @return int
-	 */
-	// @Override
-	/*
-	 * public int compareTo(Pays paysCompare) { return
-	 * this.nom.compareTo(paysCompare.getNom()); }
-	 */
-
-	/**
 	 * Tri des pays par PIB croissant
 	 * 
 	 * @param paysCompare
 	 * @return int de compareTo
 	 */
-	@Override
-	public int compareTo(Pays paysCompare) {
-		// astuce pour éviter les if else pour tester 1 ou -1
-		return this.PIB - paysCompare.getPiHab();
-	}
+	/*
+	 * @Override 
+	 */
 
 }
