@@ -1,12 +1,11 @@
 package fr.diginamic.maison;
 
-
 import fr.diginamic.exceptions.NumberFormatException;
 
 /**
  * Exercice Immobilier
  * 
- * Classe qui gère la manipulation d'une maison 
+ * Classe qui gère la manipulation d'une maison
  * 
  * @author Jeremy
  *
@@ -31,11 +30,15 @@ public class Maison {
 	 * 
 	 * @param newPiece nouvelle pièce à ajouter
 	 */
-	public void ajouterPiece(Piece newPiece) throws NumberFormatException {
+	public void ajouterPiece(Piece newPiece) throws NumberFormatException, NullPointerException {
 
-		// Exception si nombre négatif pour l'étage ou la superficie 
-		if (newPiece == null || newPiece.getEtage() < 0 || newPiece.getSuperficie() < 0) {
-			throw new NumberFormatException("La pièce est mal renseignée");
+		// Exception si nombre négatif pour l'étage ou la superficie
+		if (newPiece == null) {
+			throw new NullPointerException("Une pièce ne peut pas être vide");
+		} else if (newPiece.getEtage() < 0) {
+			throw new NumberFormatException("L'étage ne peut pas être négatif");
+		} else if (newPiece.getSuperficie() < 0) {
+			throw new NumberFormatException("La superficie d'une pièce ne peut pas être négative");
 		}
 
 		// Angrandissement du premier tableau à chaque ajout dans un tableau tabPiece

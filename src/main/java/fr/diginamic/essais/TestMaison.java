@@ -33,8 +33,8 @@ public class TestMaison {
 			maison.ajouterPiece(new Cuisine(15.5, 0));
 			maison.ajouterPiece(new Salon(30, 0));
 			maison.ajouterPiece(new Chambre(10, 1));
-			maison.ajouterPiece(new Chambre(7, 1));
-			maison.ajouterPiece(new SalleDeBain(4, 1));
+			maison.ajouterPiece(new Chambre(5.58, 1));
+			maison.ajouterPiece(new SalleDeBain(6, 1));
 			maison.ajouterPiece(new WC(1.50, 1));
 
 			// Affichage des caractéristiques de la maison
